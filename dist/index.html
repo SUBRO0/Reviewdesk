@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#211f2e"><title>Reviewdesk · Code review</title><link rel="icon" href="./mark.svg"><link rel="stylesheet" href="./style.css"></head>
+<body>
+<aside class="sidebar">
+  <div class="brand"><img src="./mark.svg" width="36" height="36" alt="">Reviewdesk</div>
+  <nav aria-label="Main navigation"><button class="nav active" data-page="workspace"><i data-icon="layout"></i><span>Workspace</span></button><button class="nav" data-page="history"><i data-icon="history"></i><span>Review history</span></button><button class="nav" data-page="guide"><i data-icon="book"></i><span>Project guide</span></button></nav>
+  <div class="profile"><span class="avatar">S</span><div><strong>Personal workspace</strong><small>Local reviews</small></div></div>
+</aside>
+<main>
+<header class="top"><span class="crumb"><i data-icon="panel"></i>Reviewdesk <b>/</b> <strong id="breadcrumb">Workspace</strong></span><span class="engine"><span></span><span id="engineName">Browser engine</span></span></header>
+<div class="content">
+<section id="workspace">
+<div class="intro"><div><h1>Code review</h1><p>Inspect your source, understand each finding, and refine your code.</p></div><button class="secondary" id="new"><i data-icon="plus"></i>New review</button></div>
+<div class="columns">
+<article class="panel"><div class="panelhead"><span class="tile"><i data-icon="code"></i></span><div><h2>Source code</h2><p>Paste your code or open a file.</p></div><button class="iconbtn push" id="upload" aria-label="Open a code file" title="Open file"><i data-icon="upload"></i></button><input type="file" id="file" accept=".py,.js,.mjs,.cjs" hidden></div>
+<div class="editor"><div class="filebar"><span class="traffic" aria-hidden="true"><b></b><b></b><b></b></span><span id="filename"></span><label class="lang"><select id="language" aria-label="Language"><option>Python</option><option>JavaScript</option></select></label></div>
+<div class="codebox"><pre class="gutter" id="gutter" aria-hidden="true"></pre><div class="inputwrap"><pre class="highlight" id="highlight" aria-hidden="true"></pre><textarea aria-label="Source code" id="code" spellcheck="false" autocapitalize="off" autocomplete="off" wrap="off" maxlength="50000"></textarea></div></div>
+<div class="statusbar"><span><span class="dot"></span> <span id="editStatus">Example loaded</span></span><span id="linecount"></span></div></div>
+<div class="controls"><button class="textbtn" id="sample"><i data-icon="rotate"></i>Load example</button><button id="run" class="primary"><i data-icon="spark"></i><span>Run review</span></button></div>
+<div class="mode"><label for="mode">Review engine</label><select id="mode"><option value="browser">Browser · example model + checks</option></select></div></article>
+<article class="panel results"><div class="panelhead"><span class="tile green"><i data-icon="scan"></i></span><div><h2>Review findings</h2><p id="summary">Results for this file</p></div><button class="iconbtn push" id="export" title="Download review" aria-label="Download review as Markdown"><i data-icon="download"></i></button></div>
+<div id="filters" class="filters" aria-label="Filter by severity"></div><div id="findings" aria-live="polite"></div>
+</article>
+</div><div id="notice" role="status"></div>
+</section>
+<section id="history" hidden><div class="intro"><div><h1>Review history</h1><p>Reopen the last 20 reviews saved in this browser.</p></div></div><div class="panel historylist" id="historylist"></div></section>
+<section id="guide" hidden><div class="intro"><div><h1>Project guide</h1><p>How to use the workspace and understand its results.</p></div></div>
+<div class="panel guide"><h2>Your first review</h2><p>Run the example, then open a finding to read the explanation and suggested change. Select its line number to jump into the editor. Try fixing it and running the review again.</p><h2>How the browser engine works</h2><p>A nearest-neighbor model compares each line with labeled examples of Python and JavaScript. A few explicit checks cover recognizable patterns such as a bare Python exception handler. Each finding identifies its source. Review the surrounding code before applying a change.</p><h2>Whole-file AI review</h2><p>The downloadable Python server can send a file to an Ollama model running on your computer. Start the server and Ollama, then choose the Ollama engine in the local workspace. See the README in the source project for setup.</p><h2>What gets saved</h2><p>Completed reviews include a copy of your code in browser storage. Open Review history to revisit or delete an entry. Download a Markdown report to keep a separate copy.</p><h2>Copyright</h2><p>Copyright © 2026 Venkata Rama Subba Rao Pulipaka. All rights reserved.</p></div></section>
+</div></main><dialog id="confirm"><h2>Replace the current draft?</h2><p>Edits since the last review will be lost.</p><div class="dialogbuttons"><button class="secondary" id="cancel">Keep editing</button><button class="primary" id="replace">Replace draft</button></div></dialog>
+<script type="module" src="./app.mjs"></script></body></html>

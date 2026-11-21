@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#211f2e"><title>Reviewdesk · Code review</title><link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iMTEiIGZpbGw9IiNiNmEyZmYiLz48ZyBmaWxsPSJub25lIiBzdHJva2U9IiMyNDIwMzAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyLjciPjxwYXRoIGQ9Im0xNCAxMy03IDcgNyA3bTEyLTE0IDcgNy03IDdtLTQtMTctNCAyMCIvPjwvZz48L3N2Zz4K"><style>:root{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#261f32;background:#f7f7fb;font-size:16px;--muted:#686477;--border:#e3e0e9;--purple:#6044c4}*{box-sizing:border-box}body{margin:0;min-height:100vh}button,select,textarea{font:inherit}button,select{cursor:pointer}button{display:inline-flex;align-items:center;justify-content:center;gap:8px}button:focus-visible,select:focus-visible,a:focus-visible,textarea:focus-visible{outline:3px solid #987fe8;outline-offset:2px}button:disabled{opacity:.5;cursor:default}[hidden]{display:none!important}i{display:inline-flex;align-items:center;flex-shrink:0}svg{display:block;width:18px;height:18px}.sidebar{position:fixed;inset:0 auto 0 0;width:212px;background:#201e2c;color:#f8f7fc;display:flex;flex-direction:column;padding:28px 15px 20px}.brand{display:flex;align-items:center;gap:11px;font-size:23px;font-weight:720;letter-spacing:-1.2px;margin:0 8px 49px}.sidebar nav{display:grid;gap:7px}.nav{border:0;background:transparent;color:#bdb9cb;font-size:.92rem;font-weight:550;border-radius:8px;justify-content:flex-start;padding:13px 15px;gap:13px;text-align:left}.nav.active,.nav:hover{background:#373345;color:white}.nav.active i{color:#c6b9ff}.profile{margin-top:auto;border-top:1px solid #3b3747;display:flex;align-items:center;gap:10px;padding:21px 3px 0;font-size:.83rem}.profile small{display:block;color:#b6b0c3;margin-top:4px}.avatar{width:34px;height:34px;border-radius:10px;background:#40394e;display:grid;place-items:center;color:#d9cafa;font-weight:650}main{margin-left:212px}.top{height:67px;border-bottom:1px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,3.1vw,54px);font-size:.83rem}.crumb,.engine{display:inline-flex;align-items:center;gap:11px;color:var(--muted)}.crumb b{font-weight:400;color:#b9b5c4}.crumb strong{color:#403a4b;font-weight:600}.engine{font-size:.78rem;border:1px solid #dfebe4;background:#f5faf7;color:#346748;border-radius:18px;padding:6px 11px;gap:7px}.engine>span:first-child,.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#65ab88}.content{max-width:1550px;margin:auto;padding:42px clamp(20px,3.1vw,54px) 32px}.intro{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:28px}h1,h2,h3,p{margin:0}h1{font-size:clamp(2.1rem,3vw,3rem);letter-spacing:-.06em;line-height:1.12;font-weight:680}.intro p,.panelhead p{color:var(--muted);line-height:1.5}.intro p{margin-top:9px}.secondary,.primary{border-radius:8px;font-size:.89rem;font-weight:620;padding:10px 15px;white-space:nowrap;min-height:40px}.secondary{background:#fff;color:#433c50;border:1px solid #d9d5e1}.primary{color:white;background:var(--purple);border:1px solid #563ab6}.primary:hover{background:#5237b1}.secondary:hover,.iconbtn:hover,.textbtn:hover{background:#f2eff9}.columns{display:grid;grid-template-columns:minmax(0,1.27fr) minmax(0,1fr);gap:18px;align-items:start}.panel{border:1px solid var(--border);border-radius:15px;background:white;overflow:hidden;box-shadow:0 2px 5px #241b3605}.panelhead{padding:22px 20px;display:flex;align-items:center;gap:11px}.tile{display:inline-grid;place-items:center;width:37px;height:37px;border-radius:10px;color:#6c4ab9;background:#efe9ff;flex-shrink:0}.green{color:#287260;background:#e4f3ed}.tile svg{width:21px;height:21px}h2{font-size:1.1rem;letter-spacing:-.035em}.panelhead p{font-size:.86rem;margin-top:3px}.push{margin-left:auto}.iconbtn{width:33px;height:33px;border:1px solid var(--border);border-radius:8px;background:#fff;color:#6c6578;flex-shrink:0}.editor{margin:0 16px;background:#211f2e;color:#eae7f2;border:1px solid #2d293b;border-radius:10px;overflow:hidden}.filebar,.statusbar{display:flex;align-items:center;gap:10px;background:#2b2839;color:#d9d5e6;font-size:.77rem;padding:0 12px;height:43px}.filebar{border-bottom:1px solid #3a3648}.traffic{display:flex;gap:4px}.traffic b{width:7px;height:7px;border-radius:50%;background:#db8b92}.traffic b:nth-child(2){background:#dcbf86}.traffic b:nth-child(3){background:#83b6a0}#filename{font-family:ui-monospace,monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.lang{margin-left:auto}.lang select,.mode select{border:1px solid #504b62;border-radius:5px;background-color:#333042;color:#e5dff3;padding:4px 5px;font-size:.78rem}.codebox{height:clamp(290px,37vh,470px);display:flex;position:relative}.gutter,.highlight,#code{font:400 .88rem/1.85 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;tab-size:4;white-space:pre;margin:0}.gutter{width:39px;flex-shrink:0;text-align:right;padding:16px 8px 16px 0;overflow:hidden;color:#8a839c;user-select:none}.inputwrap{position:relative;flex:1;min-width:0}.highlight,#code{position:absolute;inset:0;border:0;padding:16px 10px;overflow:auto}.highlight{pointer-events:none;scrollbar-width:none}.highlight::-webkit-scrollbar{display:none}#code{resize:none;background:transparent;color:transparent;caret-color:white;-webkit-text-fill-color:transparent;outline-offset:-2px}#code::selection{background:#aa94ff55}.kw{color:#c7a5fa}.str{color:#abd7b4}.com{color:#a09ab0}.num{color:#f1bd93}.fn{color:#9dc9ef}.statusbar{justify-content:space-between;height:31px;border-top:1px solid #393547;color:#bcb5d0}.statusbar .dot{height:6px;width:6px;margin-right:4px}.controls{display:flex;justify-content:space-between;gap:6px;align-items:center;padding:16px}.textbtn{background:none;border:0;color:#625a71;padding:6px;font-weight:550;font-size:.85rem;border-radius:6px}.mode{border-top:1px solid var(--border);padding:13px 18px;color:var(--muted);font-size:.8rem;display:flex;align-items:center;gap:10px;flex-wrap:wrap}.mode select{background:#f8f7fb;color:#4d465e;border-color:var(--border)}.filters{display:flex;flex-wrap:wrap;gap:6px;border-top:1px solid #f0edf3;padding:14px 16px 5px}.filter{border:1px solid transparent;background:#f5f4f8;color:#655e73;font-size:.8rem;padding:5px 10px;border-radius:7px;gap:5px}.filter[aria-pressed=true]{background:#ece6fb;color:#593bb0;border-color:#ded2f8}.filter b{font-size:.74rem}#findings{display:grid;gap:10px;padding:12px 16px 18px}.finding{border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;padding:13px 14px}.finding.high{--accent:#cf6573;--ink:#963b4a;--light:#fbecef}.finding.medium{--accent:#d6a047;--ink:#875b14;--light:#fbf2df}.finding.low{--accent:#8094cd;--ink:#445b94;--light:#edf0fa}.fmeta{display:flex;align-items:center;gap:8px;font-size:.77rem;color:var(--muted)}.badge{background:var(--light);color:var(--ink);border-radius:4px;padding:3px 7px;font-weight:650}.line{margin-left:auto;font:inherit;background:none;border:0;text-decoration:underline;text-underline-offset:3px;color:#6d6283}.toggle{border:0;background:none;padding:0;text-align:left;justify-content:space-between;width:100%;margin-top:9px;font-size:.98rem;font-weight:640;color:#332c40}.toggle i{color:#857e91}.finding p,.empty p,.guide p{font-size:.91rem;line-height:1.6;color:#655e72}.finding p{margin-top:6px}.solution{border-top:1px solid var(--border);margin-top:11px;padding-top:10px;font-size:.84rem}.solution small{display:block;color:var(--muted);margin-top:8px}.empty{padding:25px 10px}.empty strong{font-size:1rem}.empty p{margin-top:6px}.historylist,.guide{padding:24px}.guide{max-width:780px}.guide h2:not(:first-child){margin-top:25px}.guide p{margin-top:8px}.hrow{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--border)}.hrow:last-child{border:0}.hrow>button:first-child{border:0;background:none;flex:1;min-width:0;text-align:left;align-items:flex-start;flex-direction:column;color:#332d40}.hrow small{color:var(--muted)}#notice{font-size:.9rem;color:#60566f;margin-top:16px}dialog{border:1px solid var(--border);border-radius:14px;padding:25px;max-width:90vw;color:#332e3d}dialog::backdrop{background:#201d2b77}dialog p{margin:12px 0 20px}.dialogbuttons{display:flex;justify-content:flex-end;gap:8px}
+@media(min-width:1550px){.codebox{height:430px}}@media(max-width:1190px){.sidebar{width:175px}.brand{font-size:21px;gap:7px;margin-left:0}.brand img{width:32px}.profile{font-size:.76rem}main{margin-left:175px}.content{padding-right:20px;padding-left:20px}.columns{grid-template-columns:minmax(0,1.13fr) minmax(0,1fr);gap:12px}.panelhead{padding:18px 15px}.editor{margin:0 11px}#findings{padding:10px 11px 14px}}@media(max-width:960px){.sidebar{width:68px;align-items:center;padding:20px 8px}.sidebar nav{width:100%}.brand{margin:2px 0 35px;font-size:0;gap:0}.nav{justify-content:center;padding:13px 0}.nav span{position:absolute;clip-path:inset(100%)}.profile>div{display:none}main{margin-left:68px}.content{padding-top:30px}}@media(max-width:740px){.columns{grid-template-columns:1fr}.content{padding:23px 15px}.intro{align-items:flex-start}.intro p{font-size:.9rem}.intro .secondary{font-size:.8rem;padding:8px}.sidebar{inset:0 0 auto;width:auto;height:60px;flex-direction:row;justify-content:space-between;padding:8px 16px}.brand{font-size:19px;margin:0;gap:8px}.sidebar nav{display:flex;width:auto;gap:4px}.nav{padding:9px 11px}.profile{display:none}main{margin:60px 0 0}.top{height:45px;padding:0 15px}.codebox{height:285px}.mode{padding:12px}.panelhead{padding:17px}.profile{display:none}}@media(prefers-reduced-motion:no-preference){button{transition:background .15s,border-color .15s}}
+</style></head>
+<body>
+<aside class="sidebar">
+  <div class="brand"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iMTEiIGZpbGw9IiNiNmEyZmYiLz48ZyBmaWxsPSJub25lIiBzdHJva2U9IiMyNDIwMzAiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyLjciPjxwYXRoIGQ9Im0xNCAxMy03IDcgNyA3bTEyLTE0IDcgNy03IDdtLTQtMTctNCAyMCIvPjwvZz48L3N2Zz4K" width="36" height="36" alt="">Reviewdesk</div>
+  <nav aria-label="Main navigation"><button class="nav active" data-page="workspace"><i data-icon="layout"></i><span>Workspace</span></button><button class="nav" data-page="history"><i data-icon="history"></i><span>Review history</span></button><button class="nav" data-page="guide"><i data-icon="book"></i><span>Project guide</span></button></nav>
+  <div class="profile"><span class="avatar">S</span><div><strong>Personal workspace</strong><small>Local reviews</small></div></div>
+</aside>
+<main>
+<header class="top"><span class="crumb"><i data-icon="panel"></i>Reviewdesk <b>/</b> <strong id="breadcrumb">Workspace</strong></span><span class="engine"><span></span><span id="engineName">Browser engine</span></span></header>
+<div class="content">
+<section id="workspace">
+<div class="intro"><div><h1>Code review</h1><p>Inspect your source, understand each finding, and refine your code.</p></div><button class="secondary" id="new"><i data-icon="plus"></i>New review</button></div>
+<div class="columns">
+<article class="panel"><div class="panelhead"><span class="tile"><i data-icon="code"></i></span><div><h2>Source code</h2><p>Paste your code or open a file.</p></div><button class="iconbtn push" id="upload" aria-label="Open a code file" title="Open file"><i data-icon="upload"></i></button><input type="file" id="file" accept=".py,.js,.mjs,.cjs" hidden></div>
+<div class="editor"><div class="filebar"><span class="traffic" aria-hidden="true"><b></b><b></b><b></b></span><span id="filename"></span><label class="lang"><select id="language" aria-label="Language"><option>Python</option><option>JavaScript</option></select></label></div>
+<div class="codebox"><pre class="gutter" id="gutter" aria-hidden="true"></pre><div class="inputwrap"><pre class="highlight" id="highlight" aria-hidden="true"></pre><textarea aria-label="Source code" id="code" spellcheck="false" autocapitalize="off" autocomplete="off" wrap="off" maxlength="50000"></textarea></div></div>
+<div class="statusbar"><span><span class="dot"></span> <span id="editStatus">Example loaded</span></span><span id="linecount"></span></div></div>
+<div class="controls"><button class="textbtn" id="sample"><i data-icon="rotate"></i>Load example</button><button id="run" class="primary"><i data-icon="spark"></i><span>Run review</span></button></div>
+<div class="mode"><label for="mode">Review engine</label><select id="mode"><option value="browser">Browser · example model + checks</option></select></div></article>
+<article class="panel results"><div class="panelhead"><span class="tile green"><i data-icon="scan"></i></span><div><h2>Review findings</h2><p id="summary">Results for this file</p></div><button class="iconbtn push" id="export" title="Download review" aria-label="Download review as Markdown"><i data-icon="download"></i></button></div>
+<div id="filters" class="filters" aria-label="Filter by severity"></div><div id="findings" aria-live="polite"></div>
+</article>
+</div><div id="notice" role="status"></div>
+</section>
+<section id="history" hidden><div class="intro"><div><h1>Review history</h1><p>Reopen the last 20 reviews saved in this browser.</p></div></div><div class="panel historylist" id="historylist"></div></section>
+<section id="guide" hidden><div class="intro"><div><h1>Project guide</h1><p>How to use the workspace and understand its results.</p></div></div>
+<div class="panel guide"><h2>Your first review</h2><p>Run the example, then open a finding to read the explanation and suggested change. Select its line number to jump into the editor. Try fixing it and running the review again.</p><h2>How the browser engine works</h2><p>A nearest-neighbor model compares each line with labeled examples of Python and JavaScript. A few explicit checks cover recognizable patterns such as a bare Python exception handler. Each finding identifies its source. Review the surrounding code before applying a change.</p><h2>Whole-file AI review</h2><p>The downloadable Python server can send a file to an Ollama model running on your computer. Start the server and Ollama, then choose the Ollama engine in the local workspace. See the README in the source project for setup.</p><h2>What gets saved</h2><p>Completed reviews include a copy of your code in browser storage. Open Review history to revisit or delete an entry. Download a Markdown report to keep a separate copy.</p><h2>Copyright</h2><p>Copyright © 2026 Venkata Rama Subba Rao Pulipaka. All rights reserved.</p></div></section>
+</div></main><dialog id="confirm"><h2>Replace the current draft?</h2><p>Edits since the last review will be lost.</p><div class="dialogbuttons"><button class="secondary" id="cancel">Keep editing</button><button class="primary" id="replace">Replace draft</button></div></dialog>
+<script type="module">
+// Case-based learning: compare token sequences to labeled examples for this language.
+const catalog = {
+  mutable: ["high", "Bug risk", "Shared default argument", "Python creates this default once. Calls that omit the argument can share changes across requests.", "Use None as the default and create a fresh collection inside the function."],
+  identity: ["medium", "Correctness", "Identity used for a value", "Object identity can differ for two equal values. The result may depend on how Python created the objects.", "Compare values with == or !=. Reserve is for singleton checks such as None."],
+  bare: ["medium", "Reliability", "Catch a specific exception", "A bare except also catches interrupts and exit signals, making this function hard to stop or diagnose.", "Catch the exception this operation can raise. For a missing dictionary key, use except KeyError."],
+  debug: ["low", "Maintainability", "Debug output in application code", "This diagnostic runs each time the code reaches it and may write record details to the console.", "Remove the debug statement or use configurable logging with selected fields."],
+  loose: ["medium", "Correctness", "Implicit type conversion", "Loose comparison can treat values of different types as equal and select an unexpected branch.", "Normalize the input type if needed, then compare with === or !==."],
+  asyncEach: ["high", "Bug risk", "Async work escapes the loop", "forEach discards the promises returned by its callback. Later code can run before the work finishes.", "Await a for...of loop for ordered work, or await Promise.all over a mapped array for independent work."],
+  finallyReturn: ["high", "Bug risk", "Return inside finally", "A return here can override a pending result or suppress an exception.", "Move the return outside the finally block and keep cleanup inside it."]
+};
+const samples = {
+  Python: {file:"order_service.py", code:`def collect_orders(records, orders=[]):
+    """Collect the IDs of active orders."""
+    for record in records:
+        try:
+            if record["active"]:
+                orders.append(record["id"])
+        except:
+            print("DEBUG:", record)
+
+    return orders`},
+  JavaScript: {file:"task_queue.js", code:`async function syncTasks(tasks) {
+  tasks.forEach(async (task) => {
+    if (task.status == "ready") {
+      await task.sync();
+    }
+  });
+
+  return tasks.length;
+}`}
+};
+
+const examples = {
+  Python: {
+    mutable: ["def collect(records, orders=[]):","def load(rows=[]):","def group(items, index={}):","def record(cache={}):","def visit(items=set()):","def update(self, items=[]):"],
+    identity: ["if count is 0:","if name is 'admin':","if state is not 'ready':","return score is 1","return state is 'ok'"],
+    ok: ["def collect(records, orders=None):","def append(items, value):","def group(items, index):","def load():","def sample(limit=0):","if x is None:","if x is not None:","if flag is True:","return score == 1","if x == 'admin':","def load(items=()):","def record(cache=None):"]
+  },
+  JavaScript: {
+    asyncEach: ["items.forEach(async (item) => {","rows.forEach(async row => {","await items.forEach(async (item) => {","this.items.forEach(async (item) => {"],
+    loose: ["if (value == 1) {","if (task.status == 'ready') {","if (value != 'ready') {","return item == value;","if (value == expected) {"],
+    ok: ["if (value === 1) {","if (task.status === 'ready') {","if (value !== 'ready') {","return item === value;","items.map(async (item) => {","items.forEach((item) => {","if (value == null) {","if (value != null) {"]
+  }
+};
+
+const vocab = new Set("def if is not None True False return set forEach async await map this null finally except try function const let".split(" "));
+function normalized(line) {
+  const parts = line.match(/"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|[A-Za-z_$][\w$]*|\d+(?:\.\d+)?|===|!==|==|!=|=>|[^\s]/g) || [];
+  return parts.map(p => /^["']/.test(p) ? "STR" : /^\d/.test(p) ? "NUM" : /^[\w$]/.test(p) && !vocab.has(p) ? "NAME" : p);
+}
+function features(tokens) {
+  const result = new Set();
+  const seq = ["^", ...tokens, "$"];
+  for (const size of [2,3]) {
+    for (let i=0; i+size<=seq.length; i++) result.add(seq.slice(i,i+size).join(" "));
+  }
+  return result;
+}
+const trained = Object.fromEntries(Object.entries(examples).map(([lang, classes]) => [lang,
+  Object.entries(classes).flatMap(([label, lines]) => lines.map(line => ({label, v:features(normalized(line))})))
+]));
+function classify(line, lang) {
+  const query = features(normalized(line));
+  let best = 0, label = "ok", runnerUp = 0;
+  const scores = new Map();
+  for (const {label, v} of trained[lang]) {
+    let hit = 0;
+    for (const x of v) if (query.has(x)) hit++;
+    const score = hit / (query.size + v.size - hit);
+    scores.set(label, Math.max(scores.get(label) || 0, score));
+  }
+  for (const [key, score] of scores) {
+    if (score > best) {runnerUp = best; best = score; label = key;}
+    else runnerUp = Math.max(runnerUp, score);
+  }
+  return best >= .84 && best - runnerUp >= .10 && label !== "ok" ? label : null;
+}
+// Remove comments before matching. Preserve ordinary literals as tokens and skip multiline text.
+function cleanLines(code, lang) {
+  let close = "";
+  return code.split("\n").map(raw => {
+    let i=0, out="";
+    while (i < raw.length) {
+      if (close) {
+        const end=raw.indexOf(close,i);
+        if (end<0) break;
+        i=end+close.length; close=""; out+=" "; continue;
+      }
+      const rest=raw.slice(i);
+      if ((lang==="Python" && rest[0]==="#") || (lang==="JavaScript" && rest.startsWith("//"))) break;
+      const block=lang==="Python" ? ["\"\"\"","'''"].find(q=>rest.startsWith(q)) : rest.startsWith("/*") ? "/*" : rest[0]==="`" ? "`" : null;
+      if (block) {close=block==="/*" ? "*/" : block; i+=block.length; continue;}
+      const quote=raw[i];
+      if (quote==='"' || quote==="'") {
+        const start=i++;
+        while(i<raw.length) {const ch=raw[i++]; if(ch==="\\") i++; else if(ch===quote) break;}
+        out+=raw.slice(start,i); continue;
+      }
+      out+=raw[i++];
+    }
+    return out.trim();
+  });
+}
+function review(code, lang) {
+  if (!trained[lang]) throw new Error("Choose Python or JavaScript.");
+  const findings=[];
+  const lines=cleanLines(code,lang);
+  for (const [index,line] of lines.entries()) {
+    if (!line || line.length>2000) continue;
+    let label, source="Pattern check";
+    if(lang==="Python" && /^except\s*:\s*$/.test(line)) label="bare";
+    else if(lang==="Python" && /^print\(\s*["']debug\b/i.test(line) || lang==="JavaScript" && /^(?:debugger\s*;?$|console\.debug\()/.test(line)) label="debug";
+    else if(lang==="JavaScript" && /^(?:}\s*)?finally\s*\{\s*return\b/.test(line)) label="finallyReturn";
+    else {label=classify(line,lang); source="Example model";}
+    if(label) {
+      const [severity,category,title,detail,fix]=catalog[label];
+      findings.push({line:index+1,severity,category,title,detail,fix,source});
+    }
+  }
+  return findings;
+}
+
+
+const $=id=>document.getElementById(id);
+const paths={layout:'<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M10 9v12"/>',history:'<path d="M3 10a9 9 0 1 1 1 7M3 4v6h6m3-4v6l4 2"/>',book:'<path d="M3 5q5-2 9 1 4-3 9-1v14q-5-2-9 1-4-3-9-1zM12 6v14"/>',panel:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16"/>',plus:'<path d="M12 5v14M5 12h14"/>',code:'<path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-15-2 18"/>',upload:'<path d="M12 16V3m-5 5 5-5 5 5M4 16v4h16v-4"/>',download:'<path d="M12 3v12m-5-5 5 5 5-5M4 16v4h16v-4"/>',rotate:'<path d="M3 4v6h6M3 10a9 9 0 1 1 2 9"/>',spark:'<path d="m12 3 2.3 6.7L21 12l-6.7 2.3L12 21l-2.3-6.7L3 12l6.7-2.3zM20 2v4m-2-2h4"/>',scan:'<path d="M3 8V4h5m8 0h5v4M3 16v4h5m8 0h5v-4M8 12l3 3 6-7"/>',trash:'<path d="M3 6h18M9 6V3h6v3M6 6l1 15h10l1-15M10 10v7m4-7v7"/>',down:'<path d="m6 9 6 6 6-6"/>',up:'<path d="m6 15 6-6 6 6"/>'};
+const icon=name=>'<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">'+paths[name]+'</svg>';
+document.querySelectorAll("[data-icon]").forEach(el=>el.innerHTML=icon(el.dataset.icon));
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const severity=["high","medium","low"], key="reviewdesk.reviews.v1", limit=50000;
+let lang="Python", file=samples.Python.file, result=null, filter="all", draft=false, busy=false, pending=null;
+let history=[];
+try {const data=JSON.parse(localStorage.getItem(key)||"[]"); if(Array.isArray(data)) history=data.filter(r=>r && samples[r.lang] && typeof r.code==="string" && Array.isArray(r.findings)).slice(0,20);} catch {}
+function notify(message){$("notice").textContent=message;}
+function persist(){try{localStorage.setItem(key,JSON.stringify(history));return true;}catch{return false;}}
+function highlight(code){
+  const pattern=/("""[^\n]*?"""|'''[^\n]*?'''|"(?:\\.|[^"\\\n])*"|'(?:\\.|[^'\\\n])*'|#[^\n]*|\/\/[^\n]*|\b(?:def|return|for|in|try|except|if|else|None|True|False|while|import|from|class|with|async|await|function|let|const|var|of|throw|catch|finally|new|null|true|false)\b|\b\d+(?:\.\d+)?\b|\b[A-Za-z_$][\w$]*(?=\())/g;
+  let html="", last=0;
+  for(const m of code.matchAll(pattern)){const t=m[0];const kind=/^["']/.test(t)?"str":/^(#|\/\/)/.test(t)?"com":/^\d/.test(t)?"num":code[m.index+t.length]==="(" && !/^(if|for|catch|while)$/.test(t)?"fn":"kw";
+    html+=esc(code.slice(last,m.index))+'<span class="'+kind+'">'+esc(t)+'</span>';last=m.index+t.length;}
+  return html+esc(code.slice(last))+"\n";
+}
+function sync(){for(const id of ["highlight","gutter"]) $(id).scrollTop=$("code").scrollTop;$("highlight").scrollLeft=$("code").scrollLeft;}
+function updateEditor(){const code=$("code").value,n=code.split("\n").length;$("highlight").innerHTML=highlight(code);$("gutter").textContent=Array.from({length:n},(_,i)=>i+1).join("\n")+"\n";$("linecount").textContent=n+(n===1?" line":" lines");$("filename").textContent=file;$("language").value=lang;sync();}
+function renderResults(){
+  const items=result?.findings||[];
+  $("summary").textContent=result?items.length+" "+(items.length===1?"finding":"findings")+" · "+result.engine:"Run a review to see findings.";
+  $("export").disabled=!result;
+  $("filters").innerHTML=["all",...severity].map(s=>'<button class="filter" data-filter="'+s+'" aria-pressed="'+(s===filter)+'">'+s[0].toUpperCase()+s.slice(1)+' <b>'+(s==="all"?items.length:items.filter(f=>f.severity===s).length)+'</b></button>').join("");
+  const visible=items.map((f,i)=>({f,i})).filter(({f})=>filter==="all"||f.severity===filter);
+  if(!visible.length){let title=!result?"Ready for review":items.length?"No "+filter+" findings":"No findings from this engine";let body=!result?"Run the reviewer on the current source.":items.length?"Choose another severity to explore the results.":"Check the code’s behavior with tests and review any assumptions the engine may have missed.";$("findings").innerHTML='<div class="empty"><strong>'+esc(title)+'</strong><p>'+esc(body)+'</p></div>';return;}
+  $("findings").innerHTML=visible.map(({f,i})=>'<div class="finding '+esc(f.severity)+'"><div class="fmeta"><span class="badge">'+esc(f.severity[0].toUpperCase()+f.severity.slice(1))+'</span><span>'+esc(f.category)+'</span><button class="line" data-line="'+Number(f.line)+'">Line '+Number(f.line)+'</button></div><button class="toggle" data-expand="'+i+'" aria-expanded="false" aria-controls="fix'+i+'">'+esc(f.title)+'<i>'+icon("down")+'</i></button><p>'+esc(f.detail)+'</p><div class="solution" id="fix'+i+'" hidden><strong>Suggested change</strong><p>'+esc(f.fix)+'</p><small>Source · '+esc(f.source)+'</small></div></div>').join("");
+}
+function page(name){document.querySelectorAll("main section").forEach(el=>el.hidden=el.id!==name);document.querySelectorAll(".nav").forEach(el=>{const active=el.dataset.page===name;el.classList.toggle("active",active);if(active) el.setAttribute("aria-current","page");else el.removeAttribute("aria-current");});$("breadcrumb").textContent={workspace:"Workspace",history:"Review history",guide:"Project guide"}[name];if(name==="history") renderHistory();}
+function renderHistory(){$("historylist").innerHTML=history.length?history.map((r,i)=>'<div class="hrow"><button data-open="'+i+'"><strong>'+esc(r.file)+'</strong><small>'+esc(r.engine)+' · '+r.findings.length+' findings · '+esc(new Date(r.time).toLocaleString())+'</small></button><button class="iconbtn" data-delete="'+i+'" aria-label="Delete review">'+icon("trash")+'</button></div>').join(""):'<div class="empty"><strong>No saved reviews yet</strong><p>Run a review in the workspace to save your first result.</p></div>';}
+function replaceDraft(fn){if(busy)return;if(draft){pending=fn;$("confirm").showModal();}else fn();}
+$("cancel").onclick=()=>$("confirm").close();
+$("confirm").onclose=()=>{pending=null;};
+$("replace").onclick=()=>{const fn=pending;$("confirm").close();if(fn)fn();};
+function load(code,language,name,status,report=null){lang=language;file=name;$("code").value=code;result=report;filter="all";draft=false;$("editStatus").textContent=status;notify("");updateEditor();renderResults();$("code").scrollTop=0;$("code").scrollLeft=0;sync();}
+function example(language){$("mode").value="browser";$("engineName").textContent="Browser engine";const s=samples[language];load(s.code,language,s.file,"Example loaded",{...s,lang:language,engine:"Browser",findings:review(s.code,language)});}
+function dirty(){draft=true;result=null;filter="all";$("editStatus").textContent="Edited draft";notify("");updateEditor();renderResults();}
+$("code").addEventListener("input",dirty);$("code").addEventListener("scroll",sync);
+$("code").addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&e.key==="Enter"){e.preventDefault();run();}});
+$("language").onchange=e=>{lang=e.target.value;file=lang==="Python"?"snippet.py":"snippet.js";dirty();};
+$("mode").onchange=()=>{result=null;$("editStatus").textContent="Ready to review";renderResults();};
+$("new").onclick=()=>replaceDraft(()=>{load("",lang,lang==="Python"?"snippet.py":"snippet.js","New draft");$("code").focus();});
+$("sample").onclick=()=>replaceDraft(()=>example(lang));$("upload").onclick=()=>$("file").click();
+$("file").onchange=async e=>{const f=e.target.files[0];e.target.value="";if(!f)return;const ext=f.name.split(".").pop().toLowerCase();if(!["py","js","mjs","cjs"].includes(ext)||f.size>limit*4){notify("Choose a Python or JavaScript file under 50,000 characters.");return;}
+  try{const source=(await f.text()).replace(/\r\n?/g,"\n");if(source.length>limit){notify("File exceeds 50,000 characters.");return;}replaceDraft(()=>{load(source,ext==="py"?"Python":"JavaScript",f.name,"File loaded");draft=true;});}catch{notify("Could not open this file.");}};
+function lock(locked){busy=locked;for(const id of ["run","language","upload","new","mode","sample"]) $(id).disabled=locked;$("code").readOnly=locked;$("run").querySelector("span").textContent=locked?"Reviewing…":"Run review";}
+async function run(){if(busy)return;const code=$("code").value;if(!code.trim()){notify("Enter some code to review.");$("code").focus();return;}lock(true);notify("");try{
+  let findings,engine;
+  if($("mode").value==="ollama"){const response=await fetch("/api/review",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({code,language:lang})});const data=await response.json();if(!response.ok)throw Error(data.error||"Model review failed.");findings=data.findings;engine=data.engine;}
+  else {findings=review(code,lang);engine="Browser";}
+  result={code,file,lang,findings,engine,time:new Date().toISOString()};filter="all";draft=false;history=[result,...history].slice(0,20);$("editStatus").textContent="Reviewed";renderResults();notify(persist()?"Review saved to history.":"Review complete. Browser storage is full or unavailable. Download the report to keep it.");
+}catch(e){notify(e.message||"Review failed. Try again.");}finally{lock(false);}}
+$("run").onclick=run;
+$("filters").onclick=e=>{const b=e.target.closest("[data-filter]");if(b){filter=b.dataset.filter;renderResults();}};
+$("findings").onclick=e=>{
+  const line=e.target.closest("[data-line]");if(line){const n=Number(line.dataset.line),lines=$("code").value.split("\n");const start=lines.slice(0,n-1).reduce((sum,s)=>sum+s.length+1,0);$("code").focus();$("code").setSelectionRange(start,start+lines[n-1].length);$("code").scrollTop=Math.max(0,(n-3)*parseFloat(getComputedStyle($("code")).lineHeight));sync();return;}
+  const b=e.target.closest("[data-expand]");if(!b)return;const target=$("fix"+b.dataset.expand);target.hidden=!target.hidden;b.setAttribute("aria-expanded",String(!target.hidden));b.querySelector("i").innerHTML=icon(target.hidden?"down":"up");
+};
+$("export").onclick=()=>{if(!result)return;const r=result;const rows=r.findings.map(f=>'## '+f.severity.toUpperCase()+' · Line '+f.line+' · '+f.title+'\n\n'+f.detail+'\n\nSuggested change: '+f.fix+'\n\nSource: '+f.source);const blob=new Blob([['# Review of '+r.file,'Engine: '+r.engine,...(rows.length?rows:['No findings from this engine.'])].join('\n\n')],{type:"text/markdown"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=r.file+".review.md";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);};
+document.querySelectorAll(".nav").forEach(b=>b.onclick=()=>page(b.dataset.page));
+$("historylist").onclick=e=>{const open=e.target.closest("[data-open]"),del=e.target.closest("[data-delete]");if(open){const r=history[Number(open.dataset.open)];replaceDraft(()=>{load(r.code,r.lang,r.file,"Saved review",r);$("mode").value=r.engine==="Browser"?"browser":$("mode").querySelector('[value="ollama"]')?"ollama":"browser";$("engineName").textContent=$("mode").value==="ollama"?"Ollama engine":"Browser engine";page("workspace");});}if(del){const previous=history;history=history.filter((_,i)=>i!==Number(del.dataset.delete));if(!persist()){history=previous;alert("Could not update browser storage.");}renderHistory();}};
+example("Python");
+if(["127.0.0.1","localhost"].includes(location.hostname)){
+  fetch("/api/config").then(async r=>{if(!r.ok)return;const c=await r.json();if(c.ollama){$("mode").add(new Option("Ollama · "+c.model,"ollama"));}}).catch(()=>{});
+}
+$("mode").addEventListener("change",()=>{$("engineName").textContent=$("mode").value==="ollama"?"Ollama engine":"Browser engine";});
+
+</script></body></html>
